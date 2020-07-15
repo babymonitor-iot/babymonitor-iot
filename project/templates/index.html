@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        <!-- Local CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">    
+        
+        <meta charset="UTF-8">
+        
+        <title>{{ title }}</title>
+    </head>
+
+    <body>
+
+        <h1>{{ title }}</h1>
+        <div class="row rw-devices">
+            <div class="container col-sm babymonitor">
+                <div class="card w-75 text-center devices">
+                    <div class="card-body">
+                        <img src="{{ url_for('static', filename='images/babymonitor.png') }}" alt="Baby Monitor">
+                    </div>
+                </div>
+                
+                
+                <div class="box">
+                    <button type="submit" class="btn btn-info btn-devices" id="btn-babymonitor">Start</button>
+                </div> 
+                
+            </div>
+
+            <div class="container col-sm smartphone">
+                <div class="card w-75 text-center devices">
+                    <div class="card-body">
+                        <img src="{{ url_for('static', filename='images/smartphone.png') }}" alt="Smartphone">
+                    </div>
+                </div>
+
+                <div class="box">
+                    <button type="submit" class="btn btn-info btn-devices" id="btn-smartphone">Start</button>
+                    <button type="submit" class="btn btn-info btn-devices" id="btn-smartphone-confirm" disabled>Confirm</button>
+                </div> 
+
+            </div>
+            
+            <div class="container col-sm smarttv">
+                <div class="card w-75 text-center devices">
+                    <div class="card-body">
+                        <img src="{{ url_for('static', filename='images/monitor.png') }}" alt="Smart Tv">
+                    </div>
+                </div>
+
+                <div class="box">
+                    <button type="submit" class="btn btn-info btn-devices" id="btn-tv">Start</button>
+                    <button type="submit" class="btn btn-info btn-devices" id="btn-tv-block" disabled>Block</button>
+                </div> 
+                
+            </div>
+
+            <div class="container col-sm observer">
+                <div class="card w-75 text-center devices">
+                    <div class="card-body">
+                        <img src="{{ url_for('static', filename='images/observer.png') }}" alt="Observer">
+                    </div>
+                </div>
+
+                <div class="observer-value">
+                    <input type="checkbox" id="adaptation" autocomplete="off">
+                    <label class="adaptation" for="adaptation" style="color: white;">Adaptation?</label>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div class="row rw-sent">
+            <div class="container col-sm babymonitor">
+                <div class="card system-info sent">
+                    <h5 class="card-header text-center bm">Sent</h5>
+                    <div class="card-body">
+                        <div id="babymonitor-sent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container col-sm smartphone">
+                <div class="card system-info sent">
+                    <h5 class="card-header sm text-center ">Sent</h5>
+                    <div class="card-body">
+                        <div id="smartphone-sent"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container col-sm smarttv">
+                <div class="card system-info sent">
+                    <h5 class="card-header tv text-center">Sent</h5>
+                    <div class="card-body">
+                        <div id="tv-sent"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container col-sm observer"></div>
+            <!--
+            <div class="container col-sm observer">
+                <div class="card system-info sent">
+                    <h5 class="card-header text-center">Sent</h5>
+                    <div class="card-body">
+                        <div id="observer-sent"></div>
+                    </div>
+                </div>
+            </div>-->
+
+        </div> 
+
+        <div class="row rw-received">
+            <div class="container col-sm babymonitor">
+                <div class="card system-info received">
+                    <h5 class="card-header text-center bm">Received</h5>
+                    <div class="card-body">
+                        <div id="babymonitor-receive"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container col-sm smartphone">
+                <div class="card system-info received">
+                    <h5 class="card-header text-center sm">Received</h5>
+                    <div class="card-body">
+                        <div class="smartphone-receive"></div>
+                        <hr>
+                        <div class="from-tv"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container col-sm smarttv">
+                <div class="card system-info received">
+                    <h5 class="card-header text-center tv">Received</h5>
+                    <div class="card-body">
+                        <div id="tv-receive"></div>
+                    </div>
+                </div> 
+            </div>
+            <div class="container col-sm observer">
+            </div>
+            <!--
+            <div class="container col-sm observer">
+                <div class="card system-info received">
+                    <h5 class="card-header text-center">Received</h5>
+                    <div class="card-body">
+                        <div id="observer-receive"></div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+
+        <div class="row rw-information">
+            <div class="container col-sm babymonitor">
+                <div class="card system-info information">
+                    <h5 class="card-header text-center bm">information</h5>
+                    <div class="card-body">
+                        <div id="babymonitor-information"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container col-sm smartphone">
+                <div class="card system-info information">
+                    <h5 class="card-header text-center sm">Information</h5>
+                    <div class="card-body">
+                        <div id="smartphone-information"></div>
+                        <hr>
+                        <div id="from-tv-information"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container col-sm smarttv">
+                <div class="card system-info information">
+                    <h5 class="card-header text-center tv" id="block">Information</h5>
+                    <div class="card-body">
+                        <div id="tv-information"></div>
+                        <hr>
+                        <div id="from-sm"></div>
+                    </div>
+                </div> 
+            </div>
+            <div class="container col-sm observer"></div>
+
+        <!--<div class="container col-sm observer">
+                <div class="card system-info information">
+                    <h5 class="card-header text-center">Information</h5>
+                    <div class="card-body">
+                        <div id="observer-information"></div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- <div class="row rw-log">
+            <div class="container log">
+                <div class="card log-info">
+                    <div class="overflow-auto">
+                        <div id="log"></div>
+                    </div>
+                  </div>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="container footer">
+                <hr>
+                <h6>Grupo de Engenharia de Software Adaptativo e Distribuído - GESAD UECE</h6>
+                <h6>2020</h6>
+            </div>
+        </div>
+    </body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='js/utils.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='js/smartphone_received.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='js/smartphone_sent.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='js/smart_tv_sent.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='js/smart_tv_received.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='js/log.js') }}"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ url_for('static', filename='js/observer.js') }}"></script>
+</html>

@@ -1,0 +1,98 @@
+body{
+    background-color: #363636;
+}
+
+p {
+    padding : 1px;
+    margin : 0;
+}
+
+h1{
+    margin-top: 40px;
+    text-align: center;
+    color: white
+}
+
+img{ 
+    width: 100px;
+    height: 100px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.observer-value {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.devices{
+    padding: 3% 0% 3% 0%;
+    border-radius: 700px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%
+}
+
+.sent{
+    height: 225px;
+}
+
+.received{
+    height: 240px;
+}
+
+.information{
+    height: 225px;
+}
+
+
+
+.btn-devices{
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.system-info{
+    margin-left: 0;
+    margin-right: auto;
+    line-height: 0.8;
+    width: auto;
+}
+
+.log-info{
+    height: 300px;
+}
+
+#adaptation{
+    margin-right: 5px;
+}
+
+
+.adaptation{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.footer h6{
+    text-align: center;
+    color: white;
+}
+
+.footer hr{
+    border: 1px solid white;
+}
