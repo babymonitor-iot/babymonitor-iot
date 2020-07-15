@@ -23,9 +23,10 @@ document.querySelector('#btn-smartphone').onclick = function () {
         document.querySelector('#btn-smartphone').innerHTML = 'Start';
         document.querySelector("#btn-smartphone-confirm").disabled = true;
         setTimeout(function () {
+            console.log('HERE DENIS')
             changeColor("white", "black", ".sm");
             document.querySelector("#smartphone-sent").innerHTML = '';
-            document.querySelector("#smartphone-receive").innerHTML = '';
+            document.querySelector(".smartphone-receive").innerHTML = '';
             document.querySelector("#smartphone-information").innerHTML = '';
         }, 1000);
     }

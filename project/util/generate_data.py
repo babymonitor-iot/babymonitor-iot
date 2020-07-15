@@ -59,7 +59,7 @@ def data_from_baby(flag: str):
     data = {}
     if flag == "force_fine":
         data["crying"] = False
-        data["sleeping"] = random.choices([True, False], [0.75, 0.25], k=1)[0]
+        data["sleeping"] = random.choices([True, False], [0.1, 0.0], k=1)[0]
         data["breathing"] = True
         data["time_no_breathing"] = 0
 
@@ -74,7 +74,7 @@ def data_from_baby(flag: str):
         else:
             # Mudar o data["breathing"]
             data["sleeping"] = random.choices([True, False], [0.75, 0.25], k=1)[0]
-            data["breathing"] = random.choices([True, False], [0, 1.0], k=1)[0]
+            data["breathing"] = random.choices([True, False], [0.25, 0.75], k=1)[0]
             data["time_no_breathing"] = 0
 
             if not data["breathing"]:
