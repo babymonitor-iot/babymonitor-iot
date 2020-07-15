@@ -68,7 +68,6 @@ class Observer(threading.Thread):
         self.channel.start_consuming()
 
     def stop(self):
-        print('Entrei aqui')
         raise SystemExit()
 
     def read_message(self, message, source):
